@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  applicant_id: 1
+  approver_id: 1
+  applicant_frag: false
+  approver_frag: false
+  text_id: 1
+  status: 1
+
+two:
+  applicant_id: 1
+  approver_id: 1
+  applicant_frag: false
+  approver_frag: false
+  text_id: 1
+  status: 1
