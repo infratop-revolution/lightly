@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'requests/index'
 
+  resources :requests, only: [:create]
+
   resources :users, only: [:show]
   resources :textbooks, only: [:index, :show, :form]
   resources :lists, only: [:new, :edit, :create, :update]
