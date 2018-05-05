@@ -1,14 +1,15 @@
 class ListsController < ApplicationController
   def new
-  	@list = Text.new
+
+
+  	@text = Text.new
   end
 
   def create
-  	@list = Text.new
-    # @list.user_id = current_user.id
-  	@list.save
+  	@text = Text.new(text_params)
+    @text.user_id = current_user.id
+  	@text.save
     redirect_to textbooks_path
-
   end
 
   def edit
@@ -17,9 +18,10 @@ class ListsController < ApplicationController
 
   def update
   end
-  def destroy
-  	@list = Text.find(params[:id])
-    @list.alias-table[1].destroy
-    redirect_to new_list_path
-  end
+ 
+
+  private
+    def text_params
+      params.require(:text).permit(:name)
+    end
 end

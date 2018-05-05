@@ -1,17 +1,10 @@
-<%= form_for(@list,url: lists_path, html:{class: 'form-horizontal'})  do |f| %>
 
-<table class="table table-responsive alias-table">
-  <%= f.fields_for :part_number_aliases, wrapper: false do |pnaf| %>
-    <tr class="fields">
-      <td>
-        <%= pnaf.text_field :name, label: "氏名" %>
 
-        <%= pnaf.link_to 'リストフォーム削除', { :controller => "lists", :action => "destroy"}, {class: "btn btn-default"} %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-<%= f.link_to_add "フォーム追加", :part_number_aliases, data: { target: ".alias-table" }, class: "btn btn-default" %>
+
+<%= form_for @text, url: lists_path do |f| %>
+
+<%= f.text_field :name %>
+<%= f.submit 'aaa' %>
 
 <% end %>
 
