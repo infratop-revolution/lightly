@@ -1,4 +1,13 @@
-
+.table-hun{
+	width: 100%;
+}
+.request_btnn{
+	background-color: #8A0808;
+	color: #FFFFFF;
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 5px;
+}
 
 *{
 	margin: 0;
