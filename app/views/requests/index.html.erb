@@ -1,3 +1,5 @@
+<h1>Requests#index</h1>
+<p>Find me in app/views/requests/index.html.erb</p>
 
 
 <table>
@@ -10,7 +12,7 @@
 	<% @requests.each do |request| %>
 	<tr>
 		<td><%= request.applicant_id %></td>
-		<td><%= request.getApplicantUser.name %></td>
+		<td><%= request.getApplicantUser %></td>
 		<td><%= request.getText %></td>
 	</tr>
 	<% end %>
