@@ -1,13 +1,12 @@
 class ListsController < ApplicationController
   def new
-  	@list = TextList.new
-    @list.texts.build
+  	@text = Text.new
   end
 
   def create
-  	@list = TextList.new(list_params)
-    @list.user_id = current_user.id
-  	@list.save
+  	@text = Text.new(text_params)
+    @text.user_id = current_user.id
+  	@text.save
     redirect_to textbooks_path
   end
 
@@ -19,8 +18,7 @@ class ListsController < ApplicationController
   end
 
   private
-    def list_params
-      params.require(:text_list).permit(
-      texts_attributes: [:id,:name,:test_list_id,:text_list_id,:_destroy])
+    def text_params
+      params.require(:text).permit(:name)
     end
 end
