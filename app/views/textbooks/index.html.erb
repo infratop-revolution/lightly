@@ -1,2 +1,36 @@
-<h1>Textbooks#index</h1>
-<p>Find me in app/views/textbooks/index.html.erb</p>
+<main>
+	<div class="wrapper">
+		<input type="" name="" class="search-form">
+		<a class="mypage-search-btn" href="../texts/index.html" title=""><button type="" class="search-btn">a</button></a>
+	</div>
+	<table class="text-index-table">
+		<tr>
+			<td><span>教科書名</span></td>
+			<td><span>ユーザー名</span></td>
+			<td><span>大学名</span></td>
+		</tr>
+		<% @textbooks.each do |textbook| %>
+		<tr>
+			<td><%= textbook.title %></td>
+			<td><a href="../users/show.html" title="">大栗旬</a>
+			</td>
+			<td>慶福大学</td>
+		</tr>
+		<% end -%>
+		<tr>
+			<td>よくわかる経済学</td>
+			<td><a href="../users/show.html" title="">大栗旬</a></td>
+			<td>慶福大学</td>
+		</tr>
+		<tr>
+			<td>よくわかる経済学</td>
+			<td><a href="../users/show.html" title="">大栗旬</a></td>
+			<td>慶福大学</td>
+		</tr>
+		<tr>
+			<td>よくわかる経済学</td>
+			<td><a href="../users/show.html" title="">大栗旬</a></td>
+			<td>慶福大学</td>
+		</tr>
+	</table>
+</main>
