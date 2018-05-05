@@ -14,3 +14,36 @@
 //= require turbolinks
 //= require_tree .
 //= require nested_form_fields
+
+
+$(function(){
+	$(".acMenu dt").on("click", function() {
+		$(this).next().slideToggle(150);
+	});
+});
+
+/* chat */
+
+function getSpeech(s) {
+    var messageMine = $("<div class='chatBox'><div class='usr chatBalloon'>" + esc(s) + "</div></div>");
+    $('#chat').append(messageMine);
+    $('#txt').val('').focus();
+}
+
+function esc(s) {
+    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
+}
+
+function chatHandler(e) {
+    var inputText = $('#txt').val();
+    getSpeech(inputText);
+}
+function reqHandler(e) {
+    var inputText = "返却リクエストが送信されました";
+    getSpeech(inputText);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.chat-btn').addEventListener('click', chatHandler);
+    document.querySelector('.request_btn').addEventListener('click', reqHandler);
+});
