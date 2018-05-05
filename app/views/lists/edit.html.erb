@@ -1,5 +1,4 @@
-<%= form_for(@hotel, html:{class: 'form-horizontal'}) do |f| %>
-...
+<%= form_for(@list, html:{class: 'form-horizontal'}) do |f| %>
   <table class="table table-striped table-bordered table-hover">
           <tbody>
             <tr>
@@ -17,5 +16,4 @@
         </tbody>
       </table>
       <%= f.add_nested_fields_link :texts, 'Add new', class: 'btn btn-primary', role: 'button' %>
-...
 <% end %>
