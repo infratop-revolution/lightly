@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  root 'root#top'
   get 'users/mypage'
 
   get 'textbooks/search' => 'textbooks#search'
