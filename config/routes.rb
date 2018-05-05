@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'textbooks/search' => 'textbooks#search'
   get 'chats/index'
 
   get 'requests/index'
 
   resources :requests, only: [:create]
-
+ 
   resources :users, only: [:show]
-  resources :textbooks, only: [:index, :show, :form]
+  resources :textbooks, only: [:index, :show]
   resources :lists, only: [:new, :edit, :create, :update]
 
 
