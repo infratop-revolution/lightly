@@ -39,7 +39,7 @@ function chatHandler(e) {
     getSpeech(inputText);
 }
 function reqHandler(e) {
-    var inputText = "返却リクエストが送信されました";
+    var inputText = "リクエストが送信されました";
     getSpeech(inputText);
 }
 
