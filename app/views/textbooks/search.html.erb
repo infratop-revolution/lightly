@@ -1,0 +1,55 @@
+
+  <main>
+  <div class="form-search">
+    <%= search_form_for(@q, url:textbooks_search_path) do |f| %>
+      <%= f.search_field :name_cont, :class => "search-form" %>
+    <%= f.submit "教科書を探す",:class => "mypage-search-btn search-btn" %>
+      <% end -%>
+    </div>
+  <table class="text-index-table">
+    <tr>
+      <td><span>教科書名</span></td>
+      <td><span>ユーザー名</span></td>
+      <td><span>大学名</span></td>
+      <td></td>
+    </tr>
+    <% @textbooks.each do |textbook| %>
+    <tr>
+      <td><%= textbook.title %></td>
+      <td><a href="../users/show.html" title="">大栗旬</a>
+      <%= link_to textbook.user.name, user_path(textbook.user) %>
+      </td>
+      <td><%= textbook.user.campus.college.name %></td>
+    </tr>
+      <td>
+        
+      </td>
+    <% end -%>
+    <tr>
+      <td>よくわかる経済学</td>
+      <td><a href="../users/show.html" title="">大栗旬</a></td>
+      <td>慶福大学</td>
+      <td class="mypage-search-btn search-btn">
+        <p class="pppp">借りる</p>
+      </td>
+    </tr>
+    <tr>
+      <td>よくわかる経済学</td>
+      <td><a href="../users/show.html" title="">大栗旬</a></td>
+      <td>慶福大学</td>
+      <td class="mypage-search-btn search-btn">
+        <p class="pppp">借りる</p>
+      </td>
+    </tr>
+    <tr>
+      <td>よくわかる経済学</td>
+      <td><a href="../users/show.html" title="">大栗旬</a></td>
+      <td>慶福大学</td>
+      <td class="mypage-search-btn search-btn">
+        <p class="pppp">借りる</p>
+      </td>
+    </tr>
+
+
+  </table>
+</main>

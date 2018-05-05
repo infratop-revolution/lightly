@@ -1,8 +1,40 @@
+<!-- h1
+  | 学生検索
+= search_form_for(@q, url:search_path) do |f|
+  p
+    = f.label :name_cont, '名前'
+    = f.search_field :name_cont
+  p
+    = f.label :department_id_eq, '学部'
+    = f.collection_select :department_id_eq, @departments, :id, :name, :include_blank => '指定なし'
+  p
+    = f.label :sex_eq, '性別'
+    = f.radio_button :sex_eq, '', {:checked => true}
+    | 指定なし
+    = f.radio_button :sex_eq, '男'
+    | 男
+    = f.radio_button :sex_eq, '女'
+    | 女
+  p
+    = f.label :age_gteq, '年齢'
+    = f.radio_button 'age_gteq', '', {:checked => true}
+    | 指定なし
+    = f.radio_button 'age_gteq', '15'
+    | 15歳以上
+    = f.radio_button 'age_gteq', '20'
+    | 20歳以上
+  p
+    = f.label :subjects_id_in, '履修科目'
+    =  f.collection_check_boxes :subjects_id_in, @subjects, :id, :name
+  = f.submit -->
+
 <main>
-	<div class="wrapper">
-		<input type="" name="" class="search-form">
-		<a class="mypage-search-btn" href="../texts/index.html" title=""><button type="" class="search-btn">a</button></a>
-	</div>
+	<div class="form-search">
+		<%= search_form_for(@q, url:textbooks_search_path) do |f| %>
+		  <%= f.search_field :name_cont, :class => "search-form" %>
+		<%= f.submit "教科書を探す",:class => "mypage-search-btn search-btn" %>
+  		<% end -%>
+  	</div>
 	<table class="text-index-table">
 		<tr>
 			<td><span>教科書名</span></td>
@@ -13,24 +45,34 @@
 		<tr>
 			<td><%= textbook.title %></td>
 			<td><a href="../users/show.html" title="">大栗旬</a>
+			<%= link_to textbook.user.name, user_path(textbook.user) %>
 			</td>
-			<td>慶福大学</td>
+			<td><%= textbook.user.campus.college.name %></td>
 		</tr>
 		<% end -%>
 		<tr>
 			<td>よくわかる経済学</td>
 			<td><a href="../users/show.html" title="">大栗旬</a></td>
 			<td>慶福大学</td>
+			<td class="mypage-search-btn search-btn">
+				<p class="pppp">借りる</p>
+			</td>
 		</tr>
 		<tr>
 			<td>よくわかる経済学</td>
 			<td><a href="../users/show.html" title="">大栗旬</a></td>
 			<td>慶福大学</td>
+			<td class="mypage-search-btn search-btn">
+				<p class="pppp">借りる</p>
+			</td>
 		</tr>
 		<tr>
 			<td>よくわかる経済学</td>
 			<td><a href="../users/show.html" title="">大栗旬</a></td>
 			<td>慶福大学</td>
+			<td class="mypage-search-btn search-btn">
+				<p class="pppp">借りる</p>
+			</td>
 		</tr>
 	</table>
 </main>
