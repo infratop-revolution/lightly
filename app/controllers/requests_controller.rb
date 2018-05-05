@@ -11,6 +11,6 @@ class RequestsController < ApplicationController
   	approver_frag = true
   	status = 0
   	request.save
-  	redirect_to chats_index_path
+  	redirect_to user_path(2)
   end
 end
