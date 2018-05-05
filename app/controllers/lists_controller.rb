@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
   def new
+
+
   	@text = Text.new
   end
 
@@ -16,6 +18,7 @@ class ListsController < ApplicationController
 
   def update
   end
+ 
 
   private
     def text_params

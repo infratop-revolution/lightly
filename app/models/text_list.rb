@@ -1,2 +1,3 @@
 class TextList < ApplicationRecord
+
 end
