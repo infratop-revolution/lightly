@@ -1,21 +1,14 @@
 class ListsController < ApplicationController
   def new
-<<<<<<< HEAD
-  	@list = TextList.new
+  	@list = Text.new
   end
 
   def create
-  	@list = TextList.new
-    @list.user_id = current_user.id
+  	@list = Text.new
+    # @list.user_id = current_user.id
   	@list.save
     redirect_to textbooks_path
-=======
-  	@listsnew = TextList.new
-  end
 
-  def edit
-  	
->>>>>>> 3c2c5d2e444339d780bb056d4b23ea3bf160abbc
   end
 
   def edit
@@ -23,5 +16,10 @@ class ListsController < ApplicationController
   end
 
   def update
+  end
+  def destroy
+  	@list = Text.find(params[:id])
+    @list.alias-table[1].destroy
+    redirect_to new_list_path
   end
 end
