@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 
 
   def hotel_params
-        params.require(:hotel).permit(
+        params.require(:list).permit(
           :user_id, :test_list_id,
-          roomtypes_attributes: [:id, :hotel_id, :name, :capacity, :note, :_destroy]
+          lists_attributes: [:id, :user_id, :test_list_id, :capacity, :note, :_destroy]
         )
   end
 end
