@@ -1,11 +1,18 @@
 class TextbooksController < ApplicationController
   def index
-  	@textbooks = Text.all
+  	@q = Text.ransack(params[:q])
+  	@textbooks = @q.result(distinct: true)
   end
 
   def show
   end
 
-  def form
+  def search
+  	@q = Text.search(search_params)
+  	@textbooks = @q.result(distinct: true)
+  end
+  private
+   def search_params
+    params.require(:q).permit!
   end
 end
