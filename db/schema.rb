@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20180505023539) do
   create_table "texts", force: :cascade do |t|
     t.string "name"
     t.integer "test_list_id"
+    t.integer "text_list_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
